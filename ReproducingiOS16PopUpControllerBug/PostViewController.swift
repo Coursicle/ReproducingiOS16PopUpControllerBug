@@ -34,6 +34,8 @@ class PostViewController: UIViewController, UIGestureRecognizerDelegate, UITextF
             let popover = FlagPopUpController(delegateController: self)
             popover.presentationController?.delegate = self
             popover.displayFlagPopUp()
+            self.addChild(popover)
+            popover.didMove(toParent: self)
         }else{
             func flagReasonChosen(choice:String?){
                 print("flagged")
